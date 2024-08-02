@@ -1,3 +1,5 @@
+# MetaPhlAn4 = computatioonal tool which identifies the microbiota species or strains present in a sample, based on specific unique genomic sequences
+
 conda activate metaphlan4
 
 mkdir metaphlan/
