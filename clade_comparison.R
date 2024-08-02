@@ -1,6 +1,6 @@
 'Comparison of gene presence/absence between Wibowo and the other genes in their clusters'
 
-table_pr_ab = read.table("gene_presence_absence.Rtab", header=T, row.names=1) #from ROARY 
+table_pr_ab = read.table("gene_presence_absence.Rtab", header=T, row.names=1) # from ROARY 
 # Dimensions: 66955 rows (the genes) and 170 columns (the genomes)
 
 #We are interested in considering only the two clades containing the 3 Wibowo genomes: Clade E (C3) and Clade A (C6)
