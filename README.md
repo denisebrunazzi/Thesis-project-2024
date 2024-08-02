@@ -28,6 +28,16 @@ Each genome of the genome panel was analysed using Prokka, a software tool to ra
 
 The _.gff3_ files produced by Prokka, containing the nucleotide sequences, are used by ROARY, a pipeline that generates a pangenome. For this study, the pipeline was set to generate clusters with ≥90% percentage iden9ty, and to define as core genomes those present in ≥90% of genomes (`-i 90`, `-cd 90` flags). The process produces a gene presence/absence table.
 
+### `phylogenetic_tree.sh`
+The tree was built using PhyloPhlAn, an integrated pipeline for large-scale phylogenetic profiling of genomes and metagenome. It assigns MAGs to species-level genome bins (SGBs), and it reconstructs phylogenies using clade-specific phylogenetic markers. The configuration file was customized using BLAST Diamond for the mapping step (`--db_aa diamond`, `--map_dna diamond`, `--map_aa diamond`), MAFFT for the mul9ple sequence alignment (`--msa mafft`), trimAl for trimming (`--trim trimal`), FastTree to build the first tree (`--tree1 fastree`), and RAxML to refine the final tree (`--tree2 raxml`). The additional parameters used for the phylogene9c analysis were `--diversity low` and `--fast`. 
+
+
+
+
+
+
+
+
 
 
 
