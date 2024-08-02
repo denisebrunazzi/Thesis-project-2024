@@ -31,18 +31,14 @@ The _.gff3_ files produced by Prokka, containing the nucleotide sequences, are u
 ### `phylogenetic_tree.sh`
 The tree was built using PhyloPhlAn, an integrated pipeline for large-scale phylogenetic profiling of genomes and metagenome. It assigns MAGs to species-level genome bins (SGBs), and it reconstructs phylogenies using clade-specific phylogenetic markers. The configuration file was customized using BLAST Diamond for the mapping step (`--db_aa diamond`, `--map_dna diamond`, `--map_aa diamond`), MAFFT for the mul9ple sequence alignment (`--msa mafft`), trimAl for trimming (`--trim trimal`), FastTree to build the first tree (`--tree1 fastree`), and RAxML to refine the final tree (`--tree2 raxml`). The additional parameters used for the phylogene9c analysis were `--diversity low` and `--fast`. 
 
+### `functional_analysis.sh`
+The EggNOG mapper is used for fast functional annotation based on the KEGG Orthology (KO) database (`-d bact` flag). It requires as input the sequences identified by Prokka. The code generates a presence/absence table of each of the identified KOs in each genome of the genome panel.
 
+### `tree_view.R`
+The ANI alignment lengths and percentage identities (outputs of pyani) are used to build a tree and identify the clades. First, the identity table is converted in a distance table, and distances scores were filtered to include only the pairwise comparisons where the alignment lengths were longer than 500,000 bp. The tree was built on hierarchical Ward-linkage clusters. The clusters are defined by the percentage identity.
+The clades were analysed in terms of ANI distance and Jaccard distance. In the first case, genetic distances were calculated within a clade (intra-clade), between clades (inter-clade) and between the clades. The gene presence/absence table, from the Prokka output, is used to build the Jaccard dissimilarity pairwise distance matrix (`vegdist` command, from the library `vegan`).
 
+### `clade_comparison.R`
+The gene presence/absence table, obtained as an output to ROARY, and the clade division information, obtained from `tree_view.R`, are used to study the clades containing the ancient MAGs of F. prausnitzii. This codes builds multiple tables displaying the genes that are present in all genomes of each clade, and those in which the genes are either present or absent only in the ancient genomes.
 
-
-
-
-
-
-
-
-
-
-
-
-
+## Contributors
