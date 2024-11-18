@@ -41,4 +41,3 @@ The clades were analysed in terms of ANI distance and Jaccard distance. In the f
 ### `clade_comparison.R`
 The gene presence/absence table, obtained as an output to ROARY, and the clade division information, obtained from `tree_view.R`, are used to study the clades containing the ancient MAGs of F. prausnitzii. This codes builds multiple tables displaying the genes that are present in all genomes of each clade, and those in which the genes are either present or absent only in the ancient genomes.
 
-## Contributors
